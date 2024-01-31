@@ -53,7 +53,7 @@ jobs:
           set -x -e 
           echo sh: $0
           cd pages 
-          git add . 
+          git add -A 
           git status --porcelain -z | \
             cut -c 4- -z | \
             xargs --null git commit -m "static media sync" || { if [[ "$?" -ne 123 ]] ; then false ; fi } 
